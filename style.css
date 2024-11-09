@@ -78,3 +78,22 @@
     text-align: center;
     width: 70vw;
 }
+
+.section-3 h2{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 5vh;
+}
+
+.section-3 li{
+    font-size: 20px;
+    margin-left: 5vw;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+}
+.img1{
+    width: 60vw;
+    margin: 0vh 20vw auto;
+    margin-bottom: 5vh;
+    filter: invert();
+}
