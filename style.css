@@ -381,3 +381,176 @@ footer{
     font-size: 16px;
 }
 
+/* Student Dashboard */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    margin-top: 5vh;
+    width: 80vw;
+}
+
+.marks-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 3vh;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.marks-table th, .marks-table td {
+    padding: 1vh;
+    border: 1px solid white;
+    text-align: center;
+}
+
+.marks-table th {
+    font-size: 18px;
+    background-color: #333;
+}
+
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.feedback-form textarea {
+    resize: none;
+    width: 100%;
+    height: 5vh;
+    padding: 0.5vh;
+    border-radius: 5px;
+    border: 1px solid white;
+    background-color: #333;
+    color: white;
+}
+
+.feedback-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.5vh 2vh;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.feedback-button:hover {
+    background-color: #45a049;
+}
+
+.dashboard-footer {
+    text-align: center;
+    padding: 2vh;
+    font-size: 16px;
+}
+
+
+
+
+
+/* Teacher's Dashboard */
+.dashboard-container {
+    display: flex;
+    margin-top: 3vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboard-content {
+    width: 100%;
+    padding: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard-content h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-top: -10vh;
+    margin-bottom: 2vh;
+}
+
+.marks-form,
+.feedback-section {
+    width: 80vw;
+    margin:5vh 10vw auto;
+}
+
+.marks-form h3, .feedback-section h3 {
+    margin-left: 5vw;
+    font-size: 24px;
+    margin-bottom: 1.5vh;
+}
+
+.form {
+    margin-left: 10vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
+    padding: 2vh;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: #333;
+}
+
+.form label {
+    font-size: 18px;
+}
+
+.form input {
+    padding: 1vh;
+    border-radius: 5px;
+    border: 1px solid white;
+    background-color: #444;
+    color: white;
+    font-size: 16px;
+}
+
+.form input::placeholder {
+    color: #ddd;
+}
+
+.form button {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 1vh;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form button:hover {
+    background-color: #45a049;
+}
+
+/* Feedback section */
+.feedback {
+    margin-left: 5vw;
+    margin-top: 2vh;
+}
+
+.feedback-item {
+    margin-bottom: 2vh;
+    padding: 1vh;
+    background-color: #444;
+    border-radius: 5px;
+}
+
+.feedback-item p {
+    font-size: 16px;
+}
+
+.registeration-t-footer {
+    text-align: center;
+    margin-top: 3vh;
+    padding: 2vh;
+    font-size: 16px;
+}
