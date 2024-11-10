@@ -1,3 +1,27 @@
+<?php
+require 'config.php';
+if (isset($_POST["submit"])) {
+    $facultyid = $_POST["facultyid"];
+    $facultycode = $_POST["faculty_code"];
+    $fullname = $_POST["fullName"];
+    $password = $_POST["password"];
+    $department = $_POST["department"];
+    $confirmpassword = $_POST["confirmPassword"];
+    $duplicate = mysqli_query($conn, "SELECT * FROM faculty_user WHERE faculty_id='$facultyid'");
+    if (mysqli_num_rows($duplicate) > 0) {
+        echo "<script>alert('Faculty ID already exists');</script>";
+    } else {
+        if ($password == $confirmpassword) {
+            $query = "INSERT INTO faculty_user (faculty_id, full_name, password, department, faculty_code) VALUES ('$facultyid', '$fullname', '$password', '$department', '$facultycode')";
+            mysqli_query($conn, $query);
+            echo "<script>alert('Registration Successful!');</script>";
+        } else {
+            echo "<script>alert('Password does not match :(');</script>";
+        }
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +40,7 @@
                 <div class="nav-links">
                     <ul><a href="../homepage.html">Home</a></ul>
                     <ul>About</ul>
-                    <ul><button class="login"><a href="login-t.html">Login</a></button></ul>
+                    <ul><button class="login"><a href="login-t.php">Login</a></button></ul>
                 </div>
             </div>
         </div>
@@ -28,13 +52,9 @@
             <!-- Basic Information -->
             <label for="fullName">Full Name:</label>
             <input type="text" id="fullName" name="fullName" required>
+            <label for="facultyid">Faculty Id:</label>
+            <input type="text" id="facultyid" name="facultyid" required>
             
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-            
-            <label for="email">Email Address:</label>
-            <input type="email" id="email" name="email" required>
-
             <label for="department">Department:</label>
             <select id="department" name="department" required>
                 <option value="DSA">DSA</option>
@@ -53,10 +73,10 @@
             <label for="confirmPassword">Confirm Password:</label>
             <input type="password" id="confirmPassword" name="confirmPassword" required>
             <div class="button-teacher">
-            <button type="submit" class="register">Register</button>
+            <button type="submit" class="register" name="submit">Register</button>
         </div>
-            <h4>Already Registered? <a href="login-t.html">Login</a></h4>
-            <h4>Not a teacher? <a href="registeration-s.html">Register</a> as Student</h4>
+            <h4>Already Registered? <a href="login-t.php">Login</a></h4>
+            <h4>Not a teacher? <a href="registeration-s.php">Register</a> as Student</h4>
         </form>
     </div>
 

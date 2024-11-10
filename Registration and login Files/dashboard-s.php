@@ -1,3 +1,6 @@
+<?php
+echo "<script>alert('LOGIN SUCCESSFUL!');</script>";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,14 +17,14 @@
                     <h1 class="logo-text">InsightClass</h1>
                 </div>
                 <div class="nav-links">
-                    <ul><button class="login">Logout</button></ul>
+                    <ul><a href="logout-s.php"><button class="login">Logout</button></a></ul>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="dashboard-container">
-        <h2>Welcome, [Student's Name]</h2>
+        <h2>Welcome STUDENT!</h2>
         <h3>Your Subjects and Marks</h3>
 
         <!-- Subjects and Marks Table -->

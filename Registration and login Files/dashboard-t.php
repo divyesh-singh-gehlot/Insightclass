@@ -1,3 +1,7 @@
+<?php
+echo "<script>alert('LOGIN SUCCESSFUL!');</script>";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +18,7 @@
                     <h1 class="logo-text">InsightClass</h1>
                 </div>
                 <div class="nav-links">
-                    <ul><a href="logout.php"><button class="login">Logout</button></a></ul>
+                    <ul><a href="logout-t.php"><button class="login">Logout</button></a></ul>
                 </div>
             </div>
         </div>
@@ -25,7 +29,7 @@
             <h2>Welcome, Teacher!</h2>
             <div class="marks-form">
                 <h3>Enter Marks</h3>
-                <form action="submit-marks.php" method="POST" class="form">
+                <form action="" method="POST" class="form">
                     <label for="studentRollNumber">Student Roll Number:</label>
                     <input type="text" id="studentRollNumber" name="studentRollNumber" required>
 
@@ -50,7 +54,6 @@
                         <p><strong>Student Roll Number:</strong> 102</p>
                         <p><strong>Feedback:</strong> Needs improvement in time management.</p>
                     </div>
-                    <!-- Add more feedback items as needed -->
                 </div>
             </div>
         </div>
