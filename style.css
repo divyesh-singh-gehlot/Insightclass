@@ -1,18 +1,23 @@
+/* Homepage */
 @import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
 *{
     margin: 0;
     padding: 0;
     color:white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: black;
+    background: black;
+    
+}
+a{
+    background-color: none;
+    text-decoration: none;
 }
 .container{
     width:100vw;
     height:6vh;
     padding: 1vh 0vw;
-    margin-bottom: 10vh;
+    margin-bottom: 20vh;
 }
-
 .navbar{
     display: flex;
     flex-wrap: wrap;
@@ -39,17 +44,21 @@
     background-color: white;
     border-radius: 150px;
     color:black;
-    margin-top: -1.5vh;
+    margin-top: -1vh;
     width:7vw;
     height:5vh;
     font-size: 18px;
+}
+.login a{
+    background-color: white;
+    color: black;
 }
 .register{
     background-color: none;
     border-radius: 150px;
     border-color: white;
     color:white;
-    margin-top: -1.5vh;
+    margin-top: -1vh;
     width:7vw;
     height:5vh;
     font-size: 18px;
@@ -125,10 +134,11 @@ footer{
     justify-content: center;
     height: 80vh;
     color: white;
-    margin-bottom: 15vh;
+    margin-bottom: 20vh;
 }
 
 .registration-form h2{
+    background-color: rgba(255, 255, 255, 0.1);
     font-size: 36px;
     margin-bottom: 3vh;
     text-align: center;
@@ -142,10 +152,11 @@ footer{
     padding: 2vh;
     border: 1px solid white;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: none;
 }
 
 .form label {
+    background-color: rgba(255, 255, 255, 0.1);
     font-size: 18px;
     margin-bottom: 0.5vh;
 }
@@ -196,3 +207,177 @@ footer{
     background-color: rgba(255, 255, 255, 0.1);
     padding-bottom: 2vh;
 }
+.extras{
+    height: 7vh;
+    width: inherit;
+}
+.form h4{
+    padding-bottom: 1vh;
+    margin-right: 1vh;
+    background-color: inherit;
+}
+.extras h4 a{
+    color: gold;
+    background-color: inherit;
+}
+
+
+/* Student registeration */
+
+.registration-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    color: white;
+    margin-bottom: 20vh;
+}
+
+.registration-form h2{
+    background-color: rgba(255, 255, 255, 0.1);
+    font-size: 36px;
+    margin-bottom: 3vh;
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    gap: 1.5vh;
+    padding: 2vh;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: none;
+}
+
+.form label {
+    background-color: rgba(255, 255, 255, 0.1);
+    font-size: 18px;
+    margin-bottom: 0.5vh;
+}
+
+.form input {
+    padding: 1vh;
+    border-radius: 5px;
+    border: 1px solid white;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+}
+
+.form input::placeholder {
+    color: #ddd;
+}
+
+.form button {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 2vh;
+    transition: background-color 0.3s;
+}
+
+.form button:hover {
+    background-color: #45a049;
+}
+
+.registeration-s-footer {
+    text-align: center;
+    margin-top: 3vh;
+    padding: 2vh;
+    font-size: 16px;
+}
+
+.button-student{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding-bottom: 2vh;
+}
+
+.extras h4 a{
+    color: gold;
+    background-color: inherit;
+}
+
+
+/* Student Login Form */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    color: white;
+    margin-bottom: 20vh;
+}
+
+.login-form h2 {
+    background-color: rgba(255, 255, 255, 0.1);
+    font-size: 36px;
+    margin-bottom: 3vh;
+    text-align: center;
+}
+
+.form label {
+    background-color: rgba(255, 255, 255, 0.1);
+    font-size: 18px;
+    margin-bottom: 0.5vh;
+}
+
+.form input {
+    padding: 1vh;
+    border-radius: 5px;
+    border: 1px solid white;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+}
+
+.form input::placeholder {
+    color: #ddd;
+}
+
+.button-student {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding-bottom: 2vh;
+}
+
+.register-button {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 2vh;
+    transition: background-color 0.3s;
+}
+
+.register-button:hover {
+    background-color: #45a049;
+}
+
+.login-footer {
+    text-align: center;
+    margin-top: 3vh;
+    padding: 2vh;
+    font-size: 16px;
+}
+

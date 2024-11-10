@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Login - InsightClass</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="section-1">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <h1 class="logo-text">InsightClass</h1>
+                </div>
+                <div class="nav-links">
+                    <ul><a href="../homepage.html">Home</a></ul>
+                    <ul>Contact</ul>
+                    <ul><button class="login"><a href="registeration-t.html">Register</a></button></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="login-form">
+        <h2>Teacher Login</h2>
+        <form action="login_teacher.php" method="POST" class="form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <div class="button-teacher">
+                <button type="submit" class="register">Login</button>
+            </div>
+
+            <h4>New to InsightClass? <a href="registeration-t.html">Register as a Teacher</a></h4>
+            <h4>Not a teacher? <a href="login-s.html">Sign in</a> as Student.</h4>
+        </form>
+    </div>
+
+    <footer class="registeration-t-footer">
+        <p>Designed by <strong>DIVYESH SINGH GEHLOT</strong> (IC-2K23-32)</p>
+    </footer>
+</body>
+</html>
