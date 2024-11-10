@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Registration - InsightClass</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="section-1">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <h1 class="logo-text">InsightClass</h1>
+                </div>
+                <div class="nav-links">
+                    <ul>Home</ul>
+                    <ul>Polls</ul>
+                    <ul>Contact</ul>
+                    <ul><button class="login">Login</button></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="registration-form">
+        <h2>Teacher Registration</h2>
+        <form action="" method="POST" class="form">
+            <!-- Basic Information -->
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+            
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="department">Department:</label>
+            <select id="department" name="department" required>
+                <option value="DSA">DSA</option>
+                <option value="DBMS">DBMS</option>
+                <option value="Probablity and Statistics">Probablity and Statistics</option>
+                <option value="Chemistry">Chemistry</option>
+                <option value="Financial Accounting">Financial Accounting</option>
+            </select>
+
+            <label for="faculty_code">Faculty code:</label>
+            <input type="text" id="faculty_code" name="faculty_code" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+            <div class="button-teacher">
+            <button type="submit" class="register">Register</button>
+        </div>
+        </form>
+    </div>
+
+    <footer class="registeration-t-footer">
+        <p>Designed by <strong>DIVYESH SINGH GEHLOT</strong> (IC-2K23-32)</p>
+    </footer>
+</body>
+</html>
