@@ -5,29 +5,20 @@ require 'config.php';
 if (isset($_POST["submit"])) {
     $facultyid = $_POST["facultyid"];
     $password = $_POST["password"];
-
-    // Prepare the SQL query to fetch the user from the database
-    $stmt = $conn->prepare("SELECT * FROM faculty_user WHERE faculty_id=?");
-    $stmt->bind_param("s", $facultyid);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    $result=mysqli_query($conn , "SELECT * FROM faculty_user WHERE faculty_id=$facultyid");
 
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
         
-        // Verify the password using password_verify
         if ($password==$row["password"]) {
-            // Password is correct, log the user in
             $_SESSION["login"] = true;
             $_SESSION["id"] = $row["id"];
             header("location: dashboard-t.php");
-            exit;
-        } else {
-            // Incorrect password
+        } 
+        else {
             echo "<script>alert('Wrong Password!');</script>";
         }
     } else {
-        // No account found
         echo "<script>alert('No Account found! Register First.');</script>";
     }
 }

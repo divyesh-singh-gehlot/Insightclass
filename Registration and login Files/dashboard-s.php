@@ -29,15 +29,11 @@ echo "<script>alert('LOGIN SUCCESSFUL!');</script>";
 
         <!-- Subjects and Marks Table -->
         <table class="marks-table">
-            <thead>
                 <tr>
                     <th>Subject</th>
                     <th>Marks</th>
                     <th>Feedback</th>
                 </tr>
-            </thead>
-            <tbody>
-                <!-- Example Row -->
                 <tr>
                     <td>Mathematics</td>
                     <td>85</td>
@@ -49,19 +45,6 @@ echo "<script>alert('LOGIN SUCCESSFUL!');</script>";
                         </form>
                     </td>
                 </tr>
-                <!-- Additional rows for other subjects can be added similarly -->
-                <tr>
-                    <td>Science</td>
-                    <td>90</td>
-                    <td>
-                        <form action="submit_feedback.php" method="POST" class="feedback-form">
-                            <input type="hidden" name="subject" value="Science">
-                            <textarea name="feedback" placeholder="Enter your feedback..." required></textarea>
-                            <button type="submit" class="feedback-button">Submit</button>
-                        </form>
-                    </td>
-                </tr>
-            </tbody>
         </table>
     </div>
 

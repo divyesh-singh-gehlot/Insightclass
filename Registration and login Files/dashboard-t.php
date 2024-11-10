@@ -1,6 +1,35 @@
 <?php
-echo "<script>alert('LOGIN SUCCESSFUL!');</script>";
+require 'config.php';
+
+if (isset($_POST["submit"])) {
+    $rollnumber = $_POST["RollNumber"];
+    $subject = $_POST["subject"];
+    $marks = $_POST["marks"];
+
+    $student_check = mysqli_query($conn, "SELECT * FROM student_marks WHERE roll_number='$rollnumber'");
+    
+    if (mysqli_num_rows($student_check) == 0) {
+        echo "<script>alert('Roll number does not exist in the database');</script>";
+    } 
+    else {
+        $duplicate_check = mysqli_query($conn, "SELECT * FROM student_marks WHERE roll_number='$rollnumber' AND subject='$subject'");
+        
+        if (mysqli_num_rows($duplicate_check) > 0) {
+            echo "<script>alert('Marks for this subject already exist');</script>";
+        } 
+        else {
+            $query = "INSERT INTO student_marks (roll_number, subject, marks) VALUES ('$rollnumber', '$subject', '$marks')";            
+            if (mysqli_query($conn, $query)) {
+                echo "<script>alert('Marks fed successfully!');</script>";
+            } else {
+                echo "<script>alert('Could not insert marks!');</script>";
+            }
+        }
+    }
+}
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,8 +59,8 @@ echo "<script>alert('LOGIN SUCCESSFUL!');</script>";
             <div class="marks-form">
                 <h3>Enter Marks</h3>
                 <form action="" method="POST" class="form">
-                    <label for="studentRollNumber">Student Roll Number:</label>
-                    <input type="text" id="studentRollNumber" name="studentRollNumber" required>
+                    <label for="RollNumber">Student Roll Number:</label>
+                    <input type="text" id="RollNumber" name="RollNumber" required>
 
                     <label for="marks">Marks Obtained(Out of 100):</label>
                     <input type="number" id="marks" name="marks" required min="0" max="100">
@@ -39,22 +68,13 @@ echo "<script>alert('LOGIN SUCCESSFUL!');</script>";
                     <label for="subject">Subject:</label>
                     <input type="text" id="subject" name="subject" required>
 
-                    <button type="submit" class="register">Submit</button>
+                    <button type="submit" class="register" name="submit">Submit</button>
                 </form>
             </div>
 
             <div class="feedback-section">
-                <h3>Student Feedback</h3>
-                <div class="feedback">
-                    <div class="feedback-item">
-                        <p><strong>Student Roll Number:</strong> 101</p>
-                        <p><strong>Feedback:</strong> Great performance! Keep up the good work.</p>
-                    </div>
-                    <div class="feedback-item">
-                        <p><strong>Student Roll Number:</strong> 102</p>
-                        <p><strong>Feedback:</strong> Needs improvement in time management.</p>
-                    </div>
-                </div>
+                
+                
             </div>
         </div>
     </div>

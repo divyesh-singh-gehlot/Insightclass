@@ -5,29 +5,22 @@ require 'config.php';
 if (isset($_POST["submit"])) {
     $rollnumber = $_POST["rollNumber"];
     $password = $_POST["password"];
+    $result=mysqli_query($conn , "SELECT * FROM student_user WHERE roll_number=$rollnumber");
 
-    // Prepare the SQL query to fetch the user from the database
-    $stmt = $conn->prepare("SELECT * FROM student_user WHERE roll_number=?");
-    $stmt->bind_param("s", $rollnumber);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if (mysqli_num_rows($result) > 0) {
+    if(mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
-        
-        // Verify the password using password_verify
-        if ($password==$row["password"]) {
-            // Password is correct, log the user in
+
+        if($password==$row["password"]){
             $_SESSION["login"] = true;
             $_SESSION["id"] = $row["id"];
             header("location: dashboard-s.php");
-            exit;
-        } else {
-            // Incorrect password
+        } 
+        else{
             echo "<script>alert('Wrong Password!');</script>";
         }
-    } else {
-        // No account found
+
+    } 
+    else{
         echo "<script>alert('No Account found! Register First.');</script>";
     }
 }
