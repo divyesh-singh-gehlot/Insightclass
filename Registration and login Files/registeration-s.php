@@ -12,8 +12,8 @@ if (isset($_POST["submit"])) {
         if ($password == $confirmpassword) {
             $query = "INSERT INTO student_user (roll_number, full_name, password) VALUES ('$rollnumber', '$fullname', '$password')";
             $query2 = "INSERT INTO student_marks (roll_number) VALUES ('$rollnumber')";
-            mysqli_query($conn, $query);
             mysqli_query($conn, $query2);
+            mysqli_query($conn, $query);
             echo "<script>alert('Registration Successful!');</script>";
         } else {
             echo "<script>alert('Password does not match :(');</script>";
