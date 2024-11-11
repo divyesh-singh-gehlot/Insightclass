@@ -12,9 +12,14 @@ if (isset($_POST["submit"])) {
         echo "<script>alert('Faculty ID already exists');</script>";
     } else {
         if ($password == $confirmpassword) {
-            $query = "INSERT INTO faculty_user (faculty_id, full_name, password, department, faculty_code) VALUES ('$facultyid', '$fullname', '$password', '$department', '$facultycode')";
+            if($facultycode == 8085){
+                $query = "INSERT INTO faculty_user (faculty_id, full_name, password, department, faculty_code) VALUES ('$facultyid', '$fullname', '$password', '$department', '$facultycode')";
             mysqli_query($conn, $query);
             echo "<script>alert('Registration Successful!');</script>";
+            }
+            else{
+                echo "<script>alert('You are not a faculty!');</script>";
+            }
         } else {
             echo "<script>alert('Password does not match :(');</script>";
         }
@@ -48,7 +53,7 @@ if (isset($_POST["submit"])) {
 
     <div class="registration-form">
         <h2>Teacher Registration</h2>
-        <form action="" method="POST" class="form">
+        <form action="" method="POST" class="form" autocomplete="off">
             <!-- Basic Information -->
             <label for="fullName">Full Name:</label>
             <input type="text" id="fullName" name="fullName" required>

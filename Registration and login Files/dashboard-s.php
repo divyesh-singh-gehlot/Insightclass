@@ -53,7 +53,7 @@ if (isset($_POST["feedback-submit"])) {
     <div class="dashboard-container">
         <h2 class="dashboard-s-h2">Welcome STUDENT!</h2>
 
-        <form action="" method="POST" class="form">
+        <form action="" method="POST" class="form" autocomplete="off">
             <label for="rollnumber">Enter your Roll Number:</label>
             <input type="text" id="rollnumber" name="rollNumber" placeholder="Enter your roll number" required>
 
@@ -78,13 +78,13 @@ if (isset($_POST["feedback-submit"])) {
 
             if (isset($_POST['submit'])) {
                 $roll = $_POST["rollNumber"];
-                $sql = "SELECT roll_number, subject, marks, student_feedback FROM student_marks WHERE roll_number = '$roll'";
+                $sql = "SELECT roll_number, subject, marks, student_feedback FROM student_marks WHERE roll_number = '$roll' AND marks IS NOT NULL";
                 $result = $conn->query($sql);
 
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
                         echo "<tr><td>" . $row["subject"] . "</td><td>" . $row["marks"] . "</td><td>
-                        <form action='' method='POST' class='feedback-form'>
+                        <form action='' method='POST' class='feedback-form' autocomplete='off'>
                             <input type='hidden' name='rollNumber' value='" . htmlspecialchars($roll) . "'>
                             <input type='hidden' name='subject' value='" . htmlspecialchars($row["subject"]) . "'>
                             <textarea name='feedback' placeholder='Enter your feedback...' required>" . htmlspecialchars($row["student_feedback"]) . "</textarea>

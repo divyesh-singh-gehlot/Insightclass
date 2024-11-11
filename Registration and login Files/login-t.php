@@ -51,7 +51,7 @@ if (isset($_POST["submit"])) {
 
     <div class="login-form">
         <h2>Teacher Login</h2>
-        <form action="" method="POST" class="form">
+        <form action="" method="POST" class="form" autocomplete="off">
             <label for="facultyid">Faculty ID:</label>
             <input type="text" id="facultyid" name="facultyid" required>
 

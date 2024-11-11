@@ -55,7 +55,7 @@ if (isset($_POST["submit"])) {
         <h2>Welcome, Teacher!</h2>
         <div class="marks-form">
             <h3>Enter Marks</h3>
-            <form action="" method="POST" class="form">
+            <form action="" method="POST" class="form" autocomplete="off">
                 <label for="RollNumber">Student Roll Number:</label>
                 <input type="text" id="RollNumber" name="RollNumber" required>
 
@@ -82,7 +82,7 @@ if (isset($_POST["submit"])) {
                  if ($conn->connect_error) {
                      die("Connection failed: " . $conn->connect_error);
                  }
-                $sql = "SELECT roll_number, subject,marks,student_feedback FROM student_marks";
+                $sql = "SELECT roll_number, subject,marks,student_feedback FROM student_marks WHERE student_feedback IS NOT NULL";
                 $result = $conn->query($sql);
 
                 if ($result->num_rows > 0) {

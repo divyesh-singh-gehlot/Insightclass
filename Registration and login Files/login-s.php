@@ -53,7 +53,7 @@ if (isset($_POST["submit"])) {
 
     <div class="login-form">
         <h2>Student Login</h2>
-        <form action="" method="POST" class="form">
+        <form action="" method="POST" class="form" autocomplete="off">
             <label for="username">Roll Number:</label>
             <input type="text" id="rollnumber" name="rollNumber" placeholder="Enter your roll number" required>
 
