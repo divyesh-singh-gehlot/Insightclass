@@ -50,7 +50,7 @@ if (isset($_POST["submit"])) {
     <div class="registration-form">
         <h2>Student Registration</h2>
         <form action="" autocomplete="off" method="POST" class="form">
-            <!-- Student Registration Form -->
+
             <label for="rollNumber">Roll Number:</label>
             <input type="text" id="rollNumber" name="rollNumber" required>
 
