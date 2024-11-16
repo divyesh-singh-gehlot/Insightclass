@@ -3,10 +3,8 @@
 *{
     margin: 0;
     padding: 0;
-    color:white;
+    color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: black;
-    
 }
 a{
     background-color: none;
@@ -406,6 +404,13 @@ footer{
     font-size: 30px;
     margin-bottom: 5vh;
     margin-top: 5vh;
+}
+
+.s-dashboard-buttons{
+    display:flex;
+    gap: 30vw;
+    align-items: center;
+    justify-content: center;
 }
 
 .marks-table {

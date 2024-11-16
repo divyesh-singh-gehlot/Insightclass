@@ -27,6 +27,32 @@ if (isset($_POST["submit"])) {
         }
     }
 }
+if (isset($_POST["Update"]))
+{
+    $rollnumber = $_POST["RollNumber"];
+    $subject = $_POST["subject"];
+    $marks = $_POST["marks"];
+
+    $student_check = mysqli_query($conn, "SELECT * FROM student_marks WHERE roll_number='$rollnumber'");
+    
+    if (mysqli_num_rows($student_check) == 0) 
+    {
+        echo "<script>alert('Roll number does not exist in the database');</script>";
+    } 
+    else 
+    {
+            
+            $query = "UPDATE student_marks SET marks = '$marks' where roll_number = '$rollnumber' AND subject = '$subject'";            
+            if (mysqli_query($conn, $query)) 
+            {
+                echo "<script>alert('Marks updated successfully!');</script>";
+            } 
+            else 
+            {
+                echo "<script>alert('Could not update marks!');</script>";
+    }
+            }
+}
 ?>
 
 <!DOCTYPE html>
@@ -65,7 +91,10 @@ if (isset($_POST["submit"])) {
                 <label for="subject">Subject:</label>
                 <input type="text" id="subject" name="subject" required>
 
+                <div class="s-dashboard-buttons">
                 <button type="submit" class="register" name="submit">Submit</button>
+                <button type="submit" class="register" name="Update">Update</button>
+</div>
             </form>
         </div>
 
